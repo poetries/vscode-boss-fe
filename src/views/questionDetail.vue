@@ -41,7 +41,15 @@
               <div class="time has-no-topicname">发布于：{{item.addTime | formatDateString}}</div>
             </div>
           </template>
-          <a-button type="primary" block @click="handleLoadMore" v-if="showMoreBtn" class="mt30 mb30" size="large" :loading="loading">
+          <a-button
+            type="primary"
+            block
+            @click="handleLoadMore"
+            v-if="questionList.length && showMoreBtn"
+            class="mt30 mb30"
+            size="large"
+            :loading="loading"
+          >
             加载更多
           </a-button>
         </a-spin>
