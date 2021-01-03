@@ -1,4 +1,4 @@
-# estate-project
+# vscode plugin vue
 
 ## Project setup
 ```
