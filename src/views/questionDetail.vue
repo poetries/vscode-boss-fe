@@ -7,42 +7,44 @@
     />
     <a-tabs default-active-key="1" @change="handleTabChange">
       <a-tab-pane key="1" tab="全部">
-        <template v-if="questionList.length">
-          <div class="list-item" v-for="(item,index) in questionList" :key="index">
-            <div class="item-header">
-              <div class="avtar">
-                <div class="img-wrap">
-                  <img :src="item.postUserInfo.avatar" class="avtar-img" />
+        <a-spin :spinning="loading">
+          <template v-if="questionList.length">
+            <div class="list-item" v-for="(item,index) in questionList" :key="index">
+              <div class="item-header">
+                <div class="avtar">
+                  <div class="img-wrap">
+                    <img :src="item.postUserInfo.avatar" class="avtar-img" />
+                  </div>
+                </div>
+                <div class="user-info">
+                  <div class="name">{{item.postUserInfo.nickname}}</div>
+                  <div class="job-title">{{item.postUserInfo.subTitle}}</div>
                 </div>
               </div>
-              <div class="user-info">
-                <div class="name">{{item.postUserInfo.nickname}}</div>
-                <div class="job-title">{{item.postUserInfo.subTitle}}</div>
-              </div>
-            </div>
-            <div class="text-viewer">
-              <div class="text markdown-body">
-                <p v-html="item.content"></p>
-              </div>
-            </div>
-            <div class="picture-viewer" v-if="item.picList">
-              <div class="picture-list">
-                <div class="picture-item" v-for="(picItem,idx) in item.picList" :key="idx">
-                  <img :src="picItem.thumbnailUrl" class="picture">
+              <div class="text-viewer">
+                <div class="text markdown-body">
+                  <p v-html="item.content"></p>
                 </div>
               </div>
+              <div class="picture-viewer" v-if="item.picList">
+                <div class="picture-list">
+                  <div class="picture-item" v-for="(picItem,idx) in item.picList" :key="idx">
+                    <img :src="picItem.thumbnailUrl" class="picture">
+                  </div>
+                </div>
+              </div>
+              <a v-if="item.questionInfo" href="#" class="question" target="_blank">
+                <i class="iboss iboss-wenti green">问</i>
+                <div class="question-title">{{item.questionInfo.content}}</div>
+                <div class="answer-count">已回答{{item.questionInfo.answerCount}}</div>
+              </a>
+              <div class="time has-no-topicname">发布于：{{item.addTime | formatDateString}}</div>
             </div>
-            <a v-if="item.questionInfo" href="#" class="question" target="_blank">
-              <i class="iboss iboss-wenti green">问</i>
-              <div class="question-title">{{item.questionInfo.content}}</div>
-              <div class="answer-count">已回答{{item.questionInfo.answerCount}}</div>
-            </a>
-            <div class="time has-no-topicname">发布于：{{item.addTime | formatDateString}}</div>
-          </div>
-        </template>
-        <a-button type="primary" block @click="handleLoadMore" v-if="!loading && showMoreBtn" class="mt30 mb30" ghost>
-          加载更多
-        </a-button>
+          </template>
+          <a-button type="primary" block @click="handleLoadMore" v-if="showMoreBtn" class="mt30 mb30" size="large" :loading="loading">
+            加载更多
+          </a-button>
+        </a-spin>
       </a-tab-pane>
       <div slot="tabBarExtraContent">
         <a-radio-group :value="sortType" @change="handleSizeChange">
@@ -93,6 +95,7 @@ export default {
     },
     initData(flag) {
       this.$message.loading('加载中...',0)
+      this.loading = true
       axios.get(`/wapi/moment/get/answer/feed?questionId=${this.questionId}&offset=${this.offset}&sortType=${this.sortType}&filterType=0`).then(res=>{
         const questionList = ((res.data || {}).zpData.list || []).map(v=>{
           console.log(v.content.replace(/↵/g, '<br />'))
