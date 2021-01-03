@@ -1,0 +1,45 @@
+/*
+  display     显示
+  visibility  可见性
+  opacity     不透明
+*/
+
+.dn {
+  display: none;
+}
+.di {
+  display: inline;
+}
+.db {
+  display: block;
+}
+.dib {
+  display: inline-block;
+}
+.df {
+  display: flex;
+}
+.fdc {
+  flex-direction: column;
+}
+.dif {
+  display: inline-flex;
+}
+
+.vv {
+  visibility: visible;
+}
+.vh {
+  visibility: hidden;
+}
+.vc {
+  visibility: collapse;
+}
+
+.op0 {
+  opacity: 0;
+}
+
+.op15 {
+  opacity: 0.15;
+}

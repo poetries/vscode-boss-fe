@@ -1,0 +1,17 @@
+@import './line.css';
+@import './safe-area.css';
+@import './hover.css';
+@import './button.css';
+
+.clearfix-after::after {
+  content: '';
+  display: table;
+  clear: both;
+  zoom: 1;
+}
+
+.clearfix-before::before {
+  content: '';
+  display: table;
+  zoom: 1;
+}

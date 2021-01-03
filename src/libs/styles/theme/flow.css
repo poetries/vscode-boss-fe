@@ -1,0 +1,36 @@
+.t0 {
+  top: 0;
+}
+.t20 {
+  top: 20px;
+}
+.t30 {
+  top: 30px;
+}
+.t72 {
+  top: 72px;
+}
+
+.r0 {
+  right: 0;
+}
+.r30 {
+  right: 30px;
+}
+
+.b0 {
+  bottom: 0;
+}
+.b30 {
+  bottom: 30px;
+}
+
+.l0 {
+  left: 0;
+}
+.l30 {
+  left: 30px;
+}
+.l32 {
+  left: 32px;
+}

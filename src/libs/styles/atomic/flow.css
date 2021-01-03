@@ -1,0 +1,86 @@
+/* 
+  position  定位
+  top
+  bottom
+  left
+  rigth
+  z-index
+  overflow
+  float
+  clear
+*/
+
+/* position */
+.posr {
+  position: relative;
+}
+.posa {
+  position: absolute;
+}
+.poss {
+  position: static;
+}
+.posf {
+  position: fixed;
+}
+.post {
+  position: sticky;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.cl {
+  clear: both;
+}
+
+/* z-index */
+.z1n {
+  z-index: -1;
+}
+.z0 {
+  z-index: 0;
+}
+.z1 {
+  z-index: 1;
+}
+.z10 {
+  z-index: 10;
+}
+.z100 {
+  z-index: 100;
+}
+.z200 {
+  z-index: 200;
+}
+.z300 {
+  z-index: 300;
+}
+.z400 {
+  z-index: 400;
+}
+.z500 {
+  z-index: 500;
+}
+.z600 {
+  z-index: 600;
+}
+.z700 {
+  z-index: 700;
+}
+.z800 {
+  z-index: 800;
+}
+.z900 {
+  z-index: 900;
+}
+.z1000 {
+  z-index: 1000;
+}
+
+.oyh {
+  overflow-y: hidden;
+}

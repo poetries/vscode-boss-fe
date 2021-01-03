@@ -1,0 +1,11 @@
+/*
+  box-size
+*/
+
+/* box-sizing */
+.bxzbb {
+  box-sizing: border-box;
+}
+.bxzcb {
+  box-sizing: content-box;
+}

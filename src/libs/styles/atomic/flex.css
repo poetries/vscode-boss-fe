@@ -1,0 +1,166 @@
+/*
+  // 父元素
+  flex-direction
+  flex-wrap
+  flex-flow
+  justify-content
+  align-items
+  align-content
+
+  // 子元素
+  order
+  flex-grow
+  flex-shrink
+  flex-basis
+  flex
+  align-self
+*/
+
+/* flex-direction */
+.fxdr {
+  flex-direction: row;
+}
+.fxdc {
+  flex-direction: column;
+}
+.fxdrr {
+  flex-direction: row-reverse;
+}
+.fxdcr {
+  flex-direction: column-reverse;
+}
+
+/* flex-wrap */
+/* 简写与 font-weight 有点相似 */
+.fxwn {
+  /* 默认 */
+  flex-wrap: nowrap;
+}
+.fxww {
+  flex-wrap: wrap;
+}
+.fxwwr {
+  flex-wrap: wrap-reverse;
+}
+
+/* align-items */
+.aifs {
+  align-items: flex-start;
+}
+.aic {
+  align-items: center;
+}
+.aife {
+  align-items: flex-end;
+}
+.aib {
+  align-items: baseline;
+}
+
+/* justify-content */
+.jcfs {
+  justify-content: flex-start;
+}
+.jcc {
+  justify-content: center;
+}
+.jcfe {
+  justify-content: flex-end;
+}
+.jcsb {
+  /* 均匀排列每个元素首个元素放置于起点，末尾元素放置于终点 */
+  justify-content: space-between;
+}
+.jcsa {
+  /* 均匀排列每个元素每个元素周围分配相同的空间 */
+  justify-content: space-around;
+}
+.jcse {
+  /* 均匀排列每个元素每个元素之间的间隔相等 */
+  justify-content: space-evenly;
+}
+.jcst {
+  /* 均匀排列每个元素 'auto'-sized 的元素会被拉伸以适应容器的大小 */
+  justify-content: stretch;
+}
+/* flex */
+/* flex-grow flex-shrink flex-basis */
+.flexauto {
+  /* 1 1 auto */
+  flex: auto;
+}
+.flexnone {
+  /* 0 0 auto */
+  flex: none;
+}
+
+/* align-content */
+/* 多行 */
+.acfs {
+  align-content: flex-start;
+}
+.acc {
+  align-content: center;
+}
+.acfe {
+  align-content: flex-end;
+}
+
+/* ==================================================================== */
+/* 子元素 */
+
+/* flex-grow */
+/* 瓜分剩余空间比例 */
+.fxg0 {
+  flex-grow: 0;
+}
+.fxg1 {
+  flex-grow: 1;
+}
+
+/* flex-shrink */
+/* 压缩超出空间比例 */
+.fxsr0 {
+  flex-shrink: 0;
+}
+.fxsr1 {
+  flex-shrink: 1;
+}
+
+/* flex-basis */
+/* 占用基础空间 */
+.fxba {
+  flex-basis: auto;
+}
+.fxb1 {
+  flex-basis: 1px;
+}
+
+/* flex */
+/* flex-grow flex-shrink flex-basis */
+.fxa {
+  /* 1 1 auto */
+  flex: auto;
+}
+.fxn {
+  /* 0 0 auto */
+  flex: none;
+}
+.f-1 {
+  flex: 1;
+}
+
+/* align-self */
+/* 覆盖父元素的 align-items 属性 */
+.asa {
+  align-self: auto;
+}
+.asfs {
+  align-self: flex-start;
+}
+.asc {
+  align-self: center;
+}
+.asfe {
+  align-self: flex-end;
+}
