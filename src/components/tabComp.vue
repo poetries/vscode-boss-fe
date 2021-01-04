@@ -1,51 +1,49 @@
 <template>
-  <a-spin :spinning="loading">
-    <div class="plr30">
-      <div class="list-item" v-for="(item,index) in topicList" :key="index">
-        <div class="item-header">
-          <div class="avtar">
-            <div class="img-wrap">
-              <img :src="item.postUserInfo.avatar" class="avtar-img" />
-            </div>
-          </div>
-          <div class="user-info">
-            <div class="name">{{item.postUserInfo.nickname}}</div>
-            <div class="job-title">{{item.postUserInfo.subTitle}}</div>
+  <div class="plr30">
+    <div class="list-item" v-for="(item,index) in topicList" :key="index">
+      <div class="item-header">
+        <div class="avtar">
+          <div class="img-wrap">
+            <img :src="item.postUserInfo.avatar" class="avtar-img" />
           </div>
         </div>
-        <div class="text-viewer">
-          <div class="text markdown-body">
-            <p v-html="item.content"></p>
-          </div>
+        <div class="user-info">
+          <div class="name">{{item.postUserInfo.nickname}}</div>
+          <div class="job-title">{{item.postUserInfo.subTitle}}</div>
         </div>
-        <div class="picture-viewer" v-if="item.picList">
-          <div class="picture-list">
-            <div class="picture-item" v-for="(picItem,idx) in item.picList" :key="idx">
-              <img :src="picItem.thumbnailUrl" class="picture" @click="previewImg(picItem.thumbnailUrl)">
-            </div>
-          </div>
-        </div>
-        <a v-if="item.questionInfo"  class="question" @click="handleQuestionDetail(item)">
-          <i class="iboss iboss-wenti green">问</i>
-          <div class="question-title">{{item.questionInfo.content}}</div>
-          <div class="answer-count">已回答{{item.questionInfo.answerCount}}</div>
-        </a>
-        <div class="time has-no-topicname">发布于：{{item.addTime | formatDateString}}</div>
       </div>
-      <a-button type="primary" block @click="handleLoadMore" v-if="showMoreBtn" class="mt30 mb30" :loading="loading" size="large">
-        加载更多
-      </a-button>
-      <a-modal
-        :visible="visible"
-        :footer="null"
-        :centered="true"
-        width="1200"
-        @cancel="handleCancel"
-      >
-        <img :src="perviewImgUrl" />
-      </a-modal>
+      <div class="text-viewer">
+        <div class="text markdown-body">
+          <p v-html="item.content"></p>
+        </div>
+      </div>
+      <div class="picture-viewer" v-if="item.picList">
+        <div class="picture-list">
+          <div class="picture-item" v-for="(picItem,idx) in item.picList" :key="idx">
+            <img :src="picItem.thumbnailUrl" class="picture" @click="previewImg(picItem.thumbnailUrl)">
+          </div>
+        </div>
+      </div>
+      <a v-if="item.questionInfo"  class="question" @click="handleQuestionDetail(item)">
+        <i class="iboss iboss-wenti green">问</i>
+        <div class="question-title">{{item.questionInfo.content}}</div>
+        <div class="answer-count">已回答{{item.questionInfo.answerCount}}</div>
+      </a>
+      <div class="time has-no-topicname">发布于：{{item.addTime | formatDateString}}</div>
     </div>
-  </a-spin>
+    <a-button type="primary" block @click="handleLoadMore" v-if="showMoreBtn" class="mt30 mb30" :loading="loading" size="large">
+      加载更多
+    </a-button>
+    <a-modal
+      :visible="visible"
+      :footer="null"
+      :centered="true"
+      width="1200"
+      @cancel="handleCancel"
+    >
+      <img :src="perviewImgUrl" />
+    </a-modal>
+  </div>
 </template>
 
 <script>

@@ -7,8 +7,7 @@
     />
     <a-tabs default-active-key="1" @change="handleTabChange">
       <a-tab-pane key="1" tab="全部">
-        <a-spin :spinning="loading">
-          <template v-if="questionList.length">
+        <template v-if="questionList.length">
             <div class="list-item" v-for="(item,index) in questionList" :key="index">
               <div class="item-header">
                 <div class="avtar">
@@ -52,7 +51,6 @@
           >
             加载更多
           </a-button>
-        </a-spin>
       </a-tab-pane>
       <div slot="tabBarExtraContent">
         <a-radio-group :value="sortType" @change="handleSizeChange">
