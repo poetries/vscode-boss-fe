@@ -19,8 +19,8 @@
       </div>
       <div class="picture-viewer" v-if="item.picList">
         <div class="picture-list">
-          <div class="picture-item" v-for="(picItem,idx) in item.picList" :key="idx">
-            <img :src="picItem.thumbnailUrl" class="picture" @click="previewImg(picItem.thumbnailUrl)">
+          <div class="picture-item" v-for="(picItem,idx) in item.picList" :key="idx" @click="previewImg(picItem.thumbnailUrl)">
+            <img :src="picItem.thumbnailUrl" class="picture">
           </div>
         </div>
       </div>
