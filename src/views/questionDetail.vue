@@ -132,7 +132,7 @@ export default {
 
 <style lang="less" scoped>
   .list-item {
-    padding: 20px 0;
+    padding: 20px 30px;
     border-bottom: 1px solid #f0f1f2;
     position: relative;
 
