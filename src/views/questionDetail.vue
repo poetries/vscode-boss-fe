@@ -54,10 +54,10 @@
       </a-tab-pane>
       <div slot="tabBarExtraContent">
         <a-radio-group :value="sortType" @change="handleSizeChange">
-          <a-radio-button value="0">
+          <a-radio-button value="1">
             最热
           </a-radio-button>
-          <a-radio-button value="1">
+          <a-radio-button value="0">
             最新
           </a-radio-button>
         </a-radio-group>
@@ -75,7 +75,7 @@ export default {
   name: 'questionDetail',
   data() {
     return {
-      sortType: '0',
+      sortType: '1',
       offset: 0,
       loading: true,
       showMoreBtn: true,
