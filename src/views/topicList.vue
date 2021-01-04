@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb30 mt30 c999" v-if="topicName" style="font-size:20px">{{topicName}}</div>
+    <div class="mb30 mt30 c999" v-if="topicName" style="font-size:20px;margin-left:30px">{{topicName}}</div>
     <a-tabs default-active-key="0" @change="handleTabChange">
       <a-tab-pane :key="idx" :tab="tab.title" v-for="(tab, idx) in tabs">
         <tab-comp

@@ -6,7 +6,7 @@
       @back="() => $router.back()"
       v-if="$route.query.from == 'topicList'"
     />
-    <div class="mb20 mt20" v-else style="font-size:20px;color:#999;">{{questionInfo.content}}</div>
+    <div class="mb20 mt20" v-else style="font-size:20px;color:#999;margin-left:30px">{{questionInfo.content}}</div>
     <a-tabs default-active-key="1" @change="handleTabChange">
       <a-tab-pane key="1" tab="全部">
         <template v-if="questionList.length">
