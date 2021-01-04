@@ -78,7 +78,7 @@ export default {
       this.$emit('more',{})
     },
     handleQuestionDetail(item) {
-      this.$router.push(`/question-detail?questionId=${item.questionInfo.questionId}&title=${item.questionInfo.content}`)
+      this.$router.push(`/question-detail?questionId=${item.questionInfo.questionId}&title=${item.questionInfo.content}&from=topicList`)
     },
     previewImg(url) {
       this.perviewImgUrl = url

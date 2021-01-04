@@ -4,7 +4,9 @@
       style="border: 1px solid rgb(235, 237, 240)"
       :title="$route.query.title"
       @back="() => $router.back()"
+      v-if="$route.query.from == 'topicList'"
     />
+    <div class="mb20 mt20" v-else style="font-size:20px;color:#999;">{{questionInfo.content}}</div>
     <a-tabs default-active-key="1" @change="handleTabChange">
       <a-tab-pane key="1" tab="全部">
         <template v-if="questionList.length">
@@ -79,6 +81,7 @@ export default {
       offset: 0,
       loading: true,
       showMoreBtn: true,
+      questionInfo: {},
       questionList: []
     }
   },
@@ -103,6 +106,7 @@ export default {
       this.$message.loading('加载中...',0)
       this.loading = true
       axios.get(`/wapi/moment/get/answer/feed?questionId=${this.questionId}&offset=${this.offset}&sortType=${this.sortType}&filterType=0`).then(res=>{
+        this.questionInfo = (res.data || {}).zpData.questionInfo || {}
         const questionList = ((res.data || {}).zpData.list || []).map(v=>{
           console.log(v.content.replace(/↵/g, '<br />'))
           return {
